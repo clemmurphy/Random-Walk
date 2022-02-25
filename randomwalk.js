@@ -43,10 +43,10 @@ function draw() {
 
   const r = floor(random(4))
 
-  if (x <= 0) x = width
-  if (x > width) x = 0
-  if (y <= 0) y = height
-  if (y > height) y = 0
+  if (x <= 0) x = windowWidth
+  if (x > windowWidth) x = stepSize
+  if (y <= 0) y = windowHeight
+  if (y > windowHeight) y = stepSize
 
   point(x, y)
 
