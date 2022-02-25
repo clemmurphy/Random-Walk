@@ -43,10 +43,12 @@ function draw() {
 
   const r = floor(random(4))
 
-  if (x > 0 && x <= width && y > 0 && y <= height) {
-    point(x, y)
-  } else {
-  }
+  if (x <= 0) x = width
+  if (x > width) x = 0
+  if (y <= 0) y = height
+  if (y > height) y = 0
+
+  point(x, y)
 
   switch (r) {
     case 0:
