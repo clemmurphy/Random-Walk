@@ -12,8 +12,25 @@
   <body>
     <main>
       <div id="controls">
-        <button id="reset-button">reset</button
-        ><button id="save-button">save</button>
+        <div>
+          <label for="stroke-size">stroke size:</label>
+          <input type="text" value="6" id="stroke-size" />
+        </div>
+        <div>
+          <label for="step-size">step size:</label>
+          <input type="text" value="12" id="step-size" />
+        </div>
+        <div>
+          <label for="dots-per-second">dots per second:</label>
+          <input type="text" value="60" id="dots-per-second" />
+        </div>
+        <div>
+          <button id="apply-button">apply</button>
+        </div>
+      </div>
+      <div id="buttons-div">
+        <button id="reset-button">reset</button>
+        <button id="save-button">save</button>
       </div>
     </main>
   </body>

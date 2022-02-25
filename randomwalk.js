@@ -1,6 +1,8 @@
 let x
 let y
-const stepSize = 6
+let stepSize = 12
+let strokeSize = 6
+let dotsPerSecond = 60
 
 window.addEventListener('DOMContentLoaded', () => {
   const clearButton = document.getElementById('reset-button')
@@ -12,6 +14,19 @@ window.addEventListener('DOMContentLoaded', () => {
     saveCanvas(canvas, 'generative-walk', '.jpg')
     setup()
   })
+  const applyButton = document.getElementById('apply-button')
+  const strokeSizeInput = document.getElementById('stroke-size')
+  const stepSizeInput = document.getElementById('step-size')
+  const dotsPerSecondInput = document.getElementById('dots-per-second')
+  strokeSizeInput.value = strokeSize
+  stepSizeInput.value = stepSize
+  dotsPerSecondInput.value = dotsPerSecond
+  applyButton.addEventListener('click', () => {
+    stepSize = Number(stepSizeInput.value)
+    strokeSize = Number(strokeSizeInput.value)
+    dotsPerSecond = Number(dotsPerSecondInput.value)
+    setup()
+  })
 })
 
 function setup() {
@@ -19,12 +34,12 @@ function setup() {
   background(51)
   x = windowWidth / 2
   y = windowHeight / 2
-  frameRate(60)
+  frameRate(dotsPerSecond)
 }
 
 function draw() {
   stroke(random(120, 255))
-  strokeWeight(3)
+  strokeWeight(strokeSize)
 
   const r = floor(random(4))
 
