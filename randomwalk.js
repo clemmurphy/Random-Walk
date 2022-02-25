@@ -10,14 +10,15 @@ window.addEventListener('DOMContentLoaded', () => {
   const saveButton = document.getElementById('save-button')
   saveButton.addEventListener('click', () => {
     saveCanvas(canvas, 'generative-walk', '.jpg')
+    setup()
   })
 })
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight)
   background(51)
-  x = floor(height / 2)
-  y = floor(width / 2)
+  x = windowWidth / 2
+  y = windowHeight / 2
   frameRate(60)
 }
 
